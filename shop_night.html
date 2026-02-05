@@ -250,8 +250,9 @@
     ];
 
     // 応援カード付与対象（変更対象）
-    const BONUS_ITEMS = [1,2,3,4,5,6,7,8,9,10,11,12]
+    const BONUS_ITEMS = [2,3,4,5,6,7,8,9,10,11,12]
     const BONUS_UNIT_AMOUNT = 1000;
+    const BONUS_ITEM_LATER = 1;
 
     // 共通変数
     let selectItems = [];
@@ -275,6 +276,9 @@
           `<option value="${i}" ${i === 0 ? "selected" : ""}>${i}</option>`
         ).join("");
         let bonusStatus = "";
+        if(g.id == BONUS_ITEM_LATER){
+          bonusStatus = "*応援カード対象商品(撮影後お渡し)*"
+        }
         if(BONUS_ITEMS.includes(g.id)){
           bonusStatus = "*応援カード対象商品*"
         }
